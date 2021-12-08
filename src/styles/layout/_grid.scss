@@ -1,0 +1,730 @@
+// Move Utility
+// Flex Grid extending
+
+$grid-widths: (
+  "11" : 91.66666667%,
+  "10" : 83.33333333%,
+  "9" : 75%,
+  "8" : 66.66666667%,
+  "7" : 58.33333333%,
+  "6" : 50%,
+  "5" : 41.66666667%,
+  "4" : 33.33333333%,
+  "3" : 24.9%,
+  "2" : 16.66666667%,
+  "1" : 8.33333333%
+);
+
+// .f {
+//   &-row {
+//     &:after, &:before {
+//       display: block;
+//     }
+//     &, *[class*="f-row"] {
+//       .col {
+//         // Small grid
+//         &-sm {
+//           @each $number, $value in $grid-widths {
+//             &-#{$number} {
+//               @media (min-width: $screen-sm-min) {
+//                 flex: 0 0 $value;
+//                 max-width: $value;
+//               }
+//             }
+//           }
+//         }
+//         // Medium grid
+//         &-md {
+//           @each $number, $value in $grid-widths {
+//             &-#{$number} {
+//               @media (min-width: $screen-md-min) {
+//                 flex: 0 0 $value;
+//                 max-width: $value;
+//               }
+//             }
+//           }
+//         }
+//         // Large grid
+//         &-lg {
+//           @each $number, $value in $grid-widths {
+//             &-#{$number} {
+//               @media (min-width: $screen-lg-min) {
+//                 flex: 0 0 $value;
+//                 max-width: $value;
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+.f {
+    &-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &.no-f-wrap {
+        flex-wrap: nowrap;
+      }
+
+      &.wrap--sm {
+        flex-wrap: nowrap;
+        @media (max-width: 991px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &.wrap--xs {
+        flex-wrap: nowrap;
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+    }
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+
+      &.no-f-wrap {
+        flex-wrap: nowrap;
+      }
+
+      &.no-wrap {
+        flex-wrap: nowrap;
+      }
+
+      &.wrap--xs {
+        flex-wrap: nowrap;
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &.wrap-reverse {
+        flex-wrap: wrap-reverse;
+      }
+    }
+
+    &-wrap {
+      flex-wrap: wrap;
+
+      &--md,
+      &--md.no-f-wrap.f-row,
+      &--md.no-f-wrap.f-row {
+        @media (max-width: 1199px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &--sm,
+      &--sm.no-f-wrap.f-row,
+      &--sm.no-f-wrap.f-row {
+        @media (max-width: 991px) {
+          flex-wrap: wrap;
+        }
+      }
+
+      &--xs,
+      &--xs.no-f-wrap.f-row,
+      &--xs.no-f-wrap.f-row {
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    &-j {
+      &-center {
+        justify-content: center;
+
+        &--xs {
+          @media (max-width: 767px) {
+            justify-content: center;
+          }
+        }
+      }
+
+      &-end {
+        justify-content: flex-end;
+      }
+
+      &-space-around {
+        justify-content: space-around;
+      }
+
+      &-space-evenly {
+        justify-content: space-evenly;
+      }
+
+      &-space-between {
+        justify-content: space-between;
+      }
+    }
+
+    &-a {
+      &-center {
+        align-items: center;
+
+        &--self {
+          align-self: center;
+        }
+      }
+
+      &-start {
+        align-items: flex-start;
+
+        &--self {
+          align-self: flex-start;
+        }
+      }
+
+      &-end {
+        align-items: flex-end;
+
+        &--self {
+          align-self: flex-end;
+        }
+      }
+    }
+    &-order {
+      &-first {
+        order: -1;
+      }
+    }
+    &-order {
+      @media (max-width: 991px) {
+        &-first--sm {
+          order: -1;
+        }
+      }
+    }
+    &-order {
+      @media (max-width: 767px) {
+        &-first--xs {
+          order: -1;
+        }
+      }
+    }
+  }
+
+  .d {
+    &-block {
+      display: block;
+    }
+
+    &-flex {
+      display: flex;
+      &__wrap{
+        flex-wrap: wrap;
+      }
+    }
+
+    &-inline-block{
+      display: inline-block;
+    }
+    &-inline-flex {
+      display: inline-flex;
+    }
+  }
+
+// End Utility Classes
+
+//spacing classes
+
+
+.stretch {
+  height: 100%; // existing class. Can use Maps SCSS to hold pairs of keys and values. https://sass-lang.com/documentation/values/maps
+  &-25 {
+    height: 25%;
+  }
+  &-50 {
+    height: 50%;
+  }
+  &-75 {
+    height: 75%;
+  }
+  &-100 {
+    height: 100%;
+  }
+}
+
+$heightValues: (
+  15,
+  20,
+  25,
+  30,
+  40,
+  50,
+  60,
+  70,
+  75,
+  80,
+  85,
+  90,
+  100,
+  125,
+  150,
+  200,
+  225,
+  250,
+  275,
+  300,
+  350,
+  400,
+  450,
+  500,
+  550,
+  600,
+  650,
+  700,
+  750,
+  800,
+  850,
+  900,
+  950,
+  1000
+);
+@each $heights in $heightValues {
+  .h-#{$heights} {
+    height: #{$heights}px;
+  }
+  // min heights
+  .min-h-#{$heights} {
+    min-height: #{$heights}px;
+  }
+  // max heights
+  .max-h-#{$heights} {
+    max-height: #{$heights}px;
+  }
+}
+@each $heights-md in $heightValues {
+  .h-#{$heights-md}--md {
+    @media (max-width: $screen-md-max) {
+      height: #{$heights-md}px;
+    }
+  }
+  // min heights
+  .min-h-#{$heights-md}--md {
+    @media (max-width: $screen-md-max) {
+      height: #{$heights-md}px;
+    }
+  }
+  // max heights
+  .max-h-#{$heights-md}--md {
+    @media (max-width: $screen-md-max) {
+      height: #{$heights-md}px;
+    }
+  }
+}
+@each $heights-sm in $heightValues {
+  .h-#{$heights-sm}--sm {
+    @media (max-width: $screen-sm-max) {
+      height: #{$heights-sm}px;
+    }
+  }
+  // min heights
+  .min-h-#{$heights-sm}--sm {
+    @media (max-width: $screen-sm-max) {
+      min-height: #{$heights-sm}px;
+    }
+  }
+  // max heights
+  .max-h-#{$heights-sm}--sm {
+    @media (max-width: $screen-sm-max) {
+      max-height: #{$heights-sm}px;
+    }
+  }
+}
+@each $heights-xs in $heightValues {
+  .h-#{$heights-xs}--xs {
+    @media (max-width: $screen-xs-max) {
+      height: #{$heights-xs}px;
+    }
+  }
+  // min heights
+  .min-h-#{$heights-xs}--xs {
+    @media (max-width: $screen-xs-max) {
+      min-height: #{$heights-xs}px;
+    }
+  }
+  // max heights
+  .max-h-#{$heights-xs}--xs {
+    @media (max-width: $screen-xs-max) {
+      max-height: #{$heights-xs}px;
+    }
+  }
+}
+@each $height-vh in $heightValues {
+  .h-vh#{$height-vh} {
+    height: #{$height-vh}vh;
+  }
+}
+
+.h, .swiper-wrapper.h {
+  &-auto {
+    height: auto;
+    &--sm {
+      @media (max-width: 991px) {
+        height: auto;
+      }
+    }
+    &--xs {
+      @media (max-width: 767px) {
+        height: auto;
+      }
+    }
+  }
+}
+
+.min-h, .swiper-wrapper.min-h {
+  &-auto {
+    min-height: auto;
+    &--sm {
+      @media (max-width: 991px) {
+        min-height: auto;
+      }
+    }
+    &--xs {
+      @media (max-width: 767px) {
+        min-height: auto;
+      }
+    }
+  }
+}
+
+.max-h, .swiper-wrapper.max-h {
+  &-auto {
+    max-height: auto;
+    &--sm {
+      @media (max-width: 991px) {
+        max-height: auto;
+      }
+    }
+    &--xs {
+      @media (max-width: 767px) {
+        max-height: auto;
+      }
+    }
+  }
+}
+
+.h {
+  &-responsive {
+    max-height: 100%;
+  }
+}
+.w {
+  &-responsive {
+    width: 100%;
+  }
+}
+$spaceamounts: (
+  0,
+  5,
+  10,
+  12,
+  15,
+  16,
+  20,
+  24,
+  25,
+  30,
+  32,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60,
+  65,
+  75,
+  80,
+  100,
+  135,
+  150,
+  200
+); // Adjust this to include the pixel amounts you need.
+$sides: (
+  top,
+  bottom,
+  left,
+  right
+); // Leave this variable alone
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px;
+    }
+
+    *[class*=" m-"].m-#{str-slice($side, 0, 1)}-#{$space}--sm,
+    *[class^="m-"].m-#{str-slice($side, 0, 1)}-#{$space}--sm,
+    .m-#{str-slice($side, 0, 1)}-#{$space}--sm {
+      @media (max-width: 991px) {
+        margin-#{$side}: #{$space}px;
+      }
+    }
+
+    *[class*=" m-"].m-#{str-slice($side, 0, 1)}-#{$space}--xs,
+    *[class^="m-"].m-#{str-slice($side, 0, 1)}-#{$space}--xs,
+    .m-#{str-slice($side, 0, 1)}-#{$space}--xs {
+      @media (max-width: 767px) {
+        margin-#{$side}: #{$space}px;
+      }
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px;
+    }
+
+    *[class*=" p-"].p-#{str-slice($side, 0, 1)}-#{$space}--sm,
+    *[class^="p-"].p-#{str-slice($side, 0, 1)}-#{$space}--sm,
+    .p-#{str-slice($side, 0, 1)}-#{$space}--sm {
+      @media (max-width: 991px) {
+        padding-#{$side}: #{$space}px;
+      }
+    }
+
+    *[class*=" p-"].p-#{str-slice($side, 0, 1)}-#{$space}--xs,
+    *[class^="p-"].p-#{str-slice($side, 0, 1)}-#{$space}--xs,
+    .p-#{str-slice($side, 0, 1)}-#{$space}--xs {
+      @media (max-width: 767px) {
+        padding-#{$side}: #{$space}px;
+      }
+    }
+  }
+
+  .m-#{$space} {
+    margin: #{$space}px;
+  }
+
+  .m-tb-#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+
+  .m-lr-#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+
+  .p-tb-#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+
+  .p-lr-#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+}
+@each $space in $spaceamounts {
+  .m-tb-#{$space} {
+    &--xs {
+      @media (max-width: 767px) {
+        margin-top: #{$space}px;
+        margin-bottom: #{$space}px;
+      }
+    }
+    &--sm {
+      @media (max-width: 991px) {
+        margin-top: #{$space}px;
+        margin-bottom: #{$space}px;
+      }
+    }
+  }
+  .m-lr-#{$space} {
+    &--xs {
+      @media (max-width: 767px) {
+        margin-left: #{$space}px;
+        margin-right: #{$space}px;
+      }
+    }
+    &--sm {
+      @media (max-width: 991px) {
+        margin-left: #{$space}px;
+        margin-right: #{$space}px;
+      }
+    }
+  }
+  .m-#{$space} {
+    &--sm {
+      @media (max-width: 991px) {
+        margin: #{$space}px;
+      }
+    }
+    &--xs {
+      @media (max-width: 767px) {
+        margin: #{$space}px;
+      }
+    }
+  }
+
+  .p-tb-#{$space} {
+    &--xs {
+      @media (max-width: 767px) {
+        padding-top: #{$space}px;
+        padding-bottom: #{$space}px;
+      }
+    }
+    &--sm {
+      @media (max-width: 767px) {
+        padding-top: #{$space}px;
+        padding-bottom: #{$space}px;
+      }
+    }
+  }
+  .p-lr-#{$space} {
+    &--xs {
+      @media (max-width: 767px) {
+        padding-left: #{$space}px;
+        padding-right: #{$space}px;
+      }
+    }
+    &--sm {
+      @media (max-width: 767px) {
+        padding-left: #{$space}px;
+        padding-right: #{$space}px;
+      }
+    }
+  }
+  .p-#{$space} {
+    &--sm {
+      @media (max-width: 991px) {
+        padding: #{$space}px;
+      }
+    }
+    &--xs {
+      @media (max-width: 767px) {
+        padding: #{$space}px;
+      }
+    }
+  }
+}
+.p {
+  &-reset {
+    padding: 15px;
+
+    &--xs {
+      @media (max-width: 767px) {
+        padding: 15px;
+
+        &-0 {
+          padding: 0;
+        }
+
+        &-15 {
+          padding: 15px;
+        }
+      }
+    }
+
+    &--sm {
+      @media (max-width: 991px) {
+        padding: 15px;
+      }
+
+      &-15 {
+        @media (max-width: 991px) {
+          padding: 15px;
+        }
+      }
+    }
+
+    &--lg {
+      @media (max-width: 1024px) {
+        padding: 15px;
+      }
+
+      &-0 {
+        @media (max-width: 1024px) {
+          padding: 0px;
+        }
+      }
+
+      &-4 {
+        @media (max-width: 1024px) {
+          padding: 4px;
+        }
+      }
+
+      &-10 {
+        @media (max-width: 1024px) {
+          padding: 10px;
+        }
+      }
+
+      &-15 {
+        @media (max-width: 1024px) {
+          padding: 15px;
+        }
+      }
+    }
+
+    &--mobi {
+      @media screen and (max-width: 767px) {
+        padding: 15px;
+      }
+
+      &-0 {
+        @media screen and (max-width: 767px) {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.m {
+  &-reset {
+    @media screen and (max-width: 767px) {
+      margin: 0;
+    }
+
+    &--xs {
+      &-0 {
+        @media screen and (max-width: 767px) {
+          margin: 0;
+        }
+      }
+    }
+
+    &--sm {
+      @media (max-width: 991px) {
+        &-0 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &-r-auto {
+    margin-right: auto;
+  }
+
+  &-l-auto {
+    margin-left: auto;
+  }
+
+  &-t-auto {
+    margin-top: auto;
+  }
+
+  &-b-auto {
+    margin-bottom: auto;
+  }
+}

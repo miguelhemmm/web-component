@@ -1,0 +1,233 @@
+/*==============================
+Mixins
+Created: 1.11.2018
+==============================*/
+// @import './colors.scss';
+
+$offset: -12vh;
+$ease: cubic-bezier(0, 0.58, 0.4, 0.99);
+$transition-ease: all 0.5s ease-in-out;
+
+
+// Extended Styles
+%heading-styles {
+  h2,
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 0;
+
+    span {
+      font-style: italic;
+      text-transform: capitalize;
+      clear: both;
+      width: 100%;
+    }
+  }
+
+  h2 {
+    font-size: 5em;
+    @media screen and (max-width: 991px) {
+      font-size: 2.5em;
+      line-height: .9em;
+    }
+
+    span {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      line-height: .9em;
+    }
+
+    &.text-right {
+      text-align: right;
+    }
+
+    &.text-left {
+      text-align: left;
+    }
+
+    &.h2-md {
+      font-size: 3em;
+      line-height: .9em;
+    }
+
+    &.md {
+      font-size: 3.25em;
+      line-height: .9em;
+    }
+
+  }
+
+  h3 {
+    font-size: 1.9em;
+    @media screen and (max-width: 991px) {
+      font-size: 1.45em;
+    }
+
+    span {
+      font-size: 1.5rem;
+      @media screen and (max-width: 991px) {
+        font-size: 1.4rem;
+      }
+    }
+    &.lrg {
+      font-size: 2.35em;
+    }
+  }
+
+  h4 {
+    font-size: 1.5em;
+    font-weight: normal;
+    @media screen and (max-width: 991px) {
+      font-size: 1.25em;
+    }
+  }
+
+  span.clear {
+    width: 100%;
+    float: left;
+    clear: both;
+  }
+
+}
+
+%header-bg-styles {
+  .bg-container {
+    height: calc(100vh - 106px);
+    width: calc(100vw - 30px);
+    overflow: hidden;
+    position: absolute;
+    background-image: url('/../site-assets/headers/header-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top center;
+
+    &.bg-qa {
+      background-image: url('/../site-assets/headers/header-bg.jpg');
+    }
+    @media screen and (max-width: 767px) {
+      background-attachment: inherit;
+      background-position: center;
+    }
+
+  }
+  .corner-callout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+
+    span.lrg {
+      font-size: 1.5em;
+    }
+  }
+}
+
+%callout-span-styles {
+  span {
+    line-height: 1em;
+
+    &.xl {
+      font-size: 3.85em;
+    }
+    &.lrg {
+      font-size: 3.1em;
+      &--light {
+        font-size: 2.24em;
+        font-weight: 200;
+      }
+    }
+    &.md {
+      font-size: 1.5em;
+    }
+    &.sm {
+      font-size: 1.25em;
+    }
+    &.xl, &.lrg, &.md, &.sm {
+      font-weight: 500;
+
+      &.text-normal {
+        font-weight: 300;
+      }
+    }
+
+  }
+
+}
+// Media querie language to target only IE10+
+$ie-only: "all and (-ms-high-contrast: none), (-ms-high-contrast: active)";
+
+@function strip-unit($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+
+// Base Responsive resize function that the type one uses
+@mixin responsive-resize($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+
+  @media (min-width: $max-vw) {
+    @each $property in $properties {
+      $max-value: $max-value / 3.5 - .5;
+      #{$property}: $max-value;
+    }
+  }
+  @media (max-width: 767px) {
+    @each $property in $properties {
+      #{$property}: $min-value / 1.5;
+    }
+  }
+  // run the same checks over the $max-value
+  @if ( type-of($max-value) == "string") {
+    // So it is a string does it have a "@" symbol to break apart
+    @if ( str-index($max-value, '@') ) {
+      $max-value-list : split-str($max-value, '@');
+      $max-value: to-number( unquote( nth($max-value-list, 1) ) );
+      $max-vw: to-number( unquote( nth($max-value-list, 2) ));
+    }
+  }
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// Gradient BG
+
+
+@mixin bfGradient ($clr1, $clr2) {
+  background: $clr1;
+  background: -moz-linear-gradient(left,  $clr2 0%, $clr1 100%);
+  background: -webkit-linear-gradient(left,  $clr2 0%,$clr1 100%);
+  background: linear-gradient(to right,  $clr2 0%,$clr1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$clr2}', endColorstr='#{$clr1}',GradientType=1 );
+}
+@mixin bfSlantingGradient ($clr1, $clr2, $clr3) {
+  background: $clr1;
+  background: -moz-linear-gradient(-45deg,  $clr1 0%, $clr2 42%, $clr3 56%, $clr2 66%, $clr1 100%);
+  background: -webkit-linear-gradient(-45deg,  $clr1 0%,$clr2 42%,$clr3 56%,$clr2 66%,$clr1 100%);
+  background: linear-gradient(135deg,  $clr1 0%,$clr2 42%,$clr3 56%,$clr2 66%,$clr1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$clr1}', endColorstr='#{$clr1}',GradientType=1 );
+}
+

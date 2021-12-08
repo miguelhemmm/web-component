@@ -1,0 +1,562 @@
+@import '../abstracts/variables';
+
+.btn {
+  //imported from brightfind.
+  font-size: 15px;
+  font-weight: 700;
+  // border: 1px solid $brand-primary;
+  text-transform: uppercase;
+  transition: $transition-ease;
+  border-radius: 0px;
+
+  &_default {
+    padding: 12px 20px;
+    // color: $white;
+    //   background: $brand-primary;
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      background: $white;
+      // border-color: darken($brand-primary, 10%);
+      color: $black;
+    }
+  }
+
+  &_primary {
+    padding: 12px 20px;
+    color: $black;
+    background: transparent;
+    display: inline-block;
+    align-items: center;
+
+    &:hover {
+      // background: $brand-primary;
+      // border-color: $brand-primary;
+      // color: $white;
+    }
+  }
+
+  &.primary-btn,
+  &.secondary-btn {
+    padding: 12px 20px;
+    font-size: .9em;
+
+    // color: $black;
+    &:hover {
+      // background: $white;
+      color: $black;
+    }
+
+    &--border {
+      padding: 12px 20px;
+      font-size: .9em;
+      // color: $black;
+    }
+  }
+
+}
+
+@media (max-width: $screen-sm-max) {
+  .btn {
+    &_default {
+      font-size: 14px;
+    }
+
+    &_primary {
+      font-size: 13px;
+      padding: 10px 17px;
+    }
+
+    &.primary-btn {
+      font-size: 14px;
+      padding: 10px 17px;
+    }
+  }
+}
+
+
+// Button Base
+%button-base {
+  padding: 10px;
+  // background-color: $brand-primary;
+  // color: #fff;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-align: center;
+  // box-shadow: 0 0 0 0 $brand-primary;
+  transition: all 350ms ease;
+  display: block;
+  max-width: 100%;
+  border-radius: 0;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    // background-color: #fff;
+    // color: $brand-primary;
+    // box-shadow: 0 0 0 1px $brand-primary;
+  }
+
+  &.btn {
+    &-svg {
+      border: 0;
+      background-color: transparent;
+      line-height: 0;
+      padding: 0;
+    }
+
+    &-solid {
+      box-shadow: none;
+
+      &:hover,
+      &:active,
+      &:focus {
+        // background-color: darken($brand-primary, 10%);
+        color: #fff;
+        box-shadow: none;
+      }
+    }
+
+    &-auto {
+      display: inline-block;
+    }
+
+    &-pill {
+      border-radius: 50px;
+
+    }
+    &-rounded {
+      border-radius: 5px;
+    }
+
+    &-xs {
+      width: 150px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+
+    &-sm {
+      width: 200px;
+    }
+
+    &-md {
+      width: 250px;
+    }
+
+    &-lg {
+      width: 350px;
+    }
+  }
+
+}
+
+.primary-btn,
+a.primary-btn,
+// button.primary-btn,
+div a.primary-btn {
+  @extend %button-base !optional;
+  background-color: $brand-primary;
+  color: #fff;
+
+  box-shadow: 0 0 0 0 $brand-primary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #fff;
+    color: $brand-primary;
+    box-shadow: 0 0 0 1px $brand-primary;
+  }
+
+  &--inverse {
+    @extend %button-base !optional;
+    background-color: $white;
+    background-color: #fff;
+    color: $brand-primary;
+    box-shadow: inset 0 0 0 0 #fff;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $brand-primary;
+      background-color: #fff;
+      box-shadow: inset 0 -3px 0 0 $brand-primary;
+    }
+
+    &-square {
+      @extend .primary-btn--inverse !optional;
+      border-radius: 0;
+    }
+  }
+
+  &--border {
+    @extend %button-base !optional;
+    background-color: #fff;
+    color: black;
+    box-shadow: inset 0 0 0 1px $brand-primary;
+
+    @media (max-width: $screen-md-max) {
+      padding: 12px 20px;
+      font-size: .8em;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: #fff;
+      background-color: $brand-primary;
+      box-shadow: inset 0 0 0 1px $brand-primary;
+      border: none;
+    }
+
+    &-square {
+      @extend .primary-btn--border !optional;
+      border-radius: 0;
+    }
+  }
+
+  &--square {
+    @extend %button-base !optional;
+  }
+
+  &.btn-solid {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($brand-primary, 10%);
+    }
+  }
+
+}
+
+.secondary-btn,
+a.secondary-btn,
+// button.secondary-btn,
+div a.secondary-btn {
+  @extend %button-base !optional;
+
+  color: #fff;
+  background-color: $brand-secondary;
+  box-shadow: 0 0 0 0 $brand-secondary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #fff;
+    color: $brand-secondary;
+    box-shadow: 0 0 0 1px $brand-secondary;
+  }
+
+  &--inverse {
+    @extend %button-base !optional;
+    background-color: $white;
+
+    color: $brand-secondary;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $brand-secondary;
+      box-shadow: inset 0 -3px 0 0 $brand-secondary;
+    }
+  }
+
+  &--border {
+    @extend %button-base !optional;
+    // color: $brand-secondary;
+    box-shadow: inset 0 0 0 1px $brand-secondary;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: white;
+      background-color: $brand-secondary;
+      box-shadow: inset 0 0 0 1px $brand-secondary;
+    }
+
+    &-square {
+      @extend .secondary-btn--border !optional;
+    }
+  }
+
+  &--square {
+    @extend .secondary-btn !optional;
+  }
+
+  &.btn-solid {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($brand-secondary, 10%);
+    }
+  }
+}
+
+.tertiary-btn,
+a.tertiary-btn,
+button.tertiary-btn,
+div a.tertiary-btn {
+  @extend %button-base !optional;
+  color: #fff;
+
+  background-color: $brand-tertiary;
+  box-shadow: 0 0 0 0 $brand-tertiary;
+
+  &:active,
+  &:focus,
+  &:hover {
+    //   color: $brand-tertiary;
+    background-color: #fff;
+
+    box-shadow: 0 0 0 1px $brand-tertiary;
+  }
+
+  &--inverse {
+    @extend %button-base !optional;
+    background-color: $white;
+
+    color: $brand-tertiary;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: $brand-tertiary;
+      background-color: $brand-tertiary;
+      box-shadow: inset 0 -3px 0 0 $brand-tertiary;
+    }
+  }
+
+  &--border {
+    @extend %button-base !optional;
+
+    color: $brand-tertiary;
+    box-shadow: inset 0 0 0 1px $brand-tertiary;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $brand-tertiary;
+      box-shadow: inset 0 0 0 1px $brand-tertiary;
+    }
+
+    &-square {
+      @extend .tertiary-btn--border !optional;
+    }
+  }
+
+  &--square {
+    @extend .tertiary-btn !optional;
+  }
+
+  &.btn-solid {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken($brand-tertiary, 10%);
+    }
+  }
+}
+
+.btn {
+  &__bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1px;
+    background: #D9D9D9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    a {
+      background-color: $brand-primary;
+      color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 0 15px #fff;
+      padding: 10px 30px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: darken($brand-primary, 10%);
+        box-shadow: 0 0 0 15px #fff;
+        color: #fff;
+      }
+    }
+
+  }
+
+  &-svg {
+    border: 0;
+    background-color: transparent;
+    line-height: 0;
+    padding: 0;
+  }
+
+  &-solid {
+    box-shadow: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      // background-color: darken($brand-primary, 10%);
+      color: #fff;
+      box-shadow: none;
+    }
+  }
+
+  &-auto {
+    display: inline-block;
+  }
+
+  &-pill {
+    border-radius: 50px;
+
+  }
+  &-rounded {
+    border-radius: 5px;
+  }
+
+
+  &-white {
+    background-color: #fff;
+    transition: background-color 350ms ease-in-out ;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: darken(#fff, 10%);
+      box-shadow: none;
+    }
+  }
+
+  &-ripple {
+    position: relative;
+
+    .ripple {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+
+      &.active {
+        .ripple__circle {
+          animation-name: rippleIn;
+          animation-duration: 500ms;
+          animation-timing-function: ease-out;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      &.inactive {
+        .ripple__circle {
+          animation-name: rippleOut;
+          animation-duration: 500ms;
+          animation-delay: 500ms;
+          animation-timing-function: ease-in;
+          animation-fill-mode: forwards;
+          opacity: 1;
+          width: 200%;
+          padding-bottom: 200%;
+        }
+      }
+    }
+
+    .ripple__circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .25);
+      transition: opacity 4s ease;
+    }
+
+  }
+
+
+  @keyframes rippleIn {
+    0% {
+      opacity: 0;
+      width: 0%;
+      padding-bottom: 0%;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    100% {
+      width: 200%;
+      padding-bottom: 200%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rippleOut {
+    0% {
+      opacity: 1;
+      width: 200%;
+      padding-bottom: 200%;
+    }
+
+    100% {
+      opacity: 0;
+      width: 0%;
+      padding-bottom: 0%;
+    }
+  }
+
+}
+
+
+.fixed-button {
+  position: sticky;
+  z-index: 999;
+  top: 10px;
+  @media (max-width: $screen-xs-max) {
+      margin-top: 60px;;
+  }
+  @media (min-width: $screen-sm) {
+  }
+  &__inner {
+      // max-width: 50px;
+      @media (min-width: $screen-sm) {
+          position: absolute;
+          right: 0;
+      }
+  }
+
+  &__btn{
+      font-size: 12px!important;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      @media (min-width: $screen-sm) {
+          padding: 5px!important;
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          width: 34px;
+          max-width: inherit!important;
+          display: flex!important;
+          align-items: center;
+      }
+  }
+}

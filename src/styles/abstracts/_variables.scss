@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400i');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
+
+/*=== Body Color ===*/
+
+$body-color: #4e4848;
+
+/*=== Theme Primary Color ===*/
+
+$brand-primary: #DC4D28;
+
+/*=== Theme Secondary Color ===*/
+
+$brand-secondary: #8B0F04;
+
+/*=== Theme Primary Tertiary Color ===*/
+
+$brand-tertiary: #D91378;
+$brand-quaternary: #e6e4d7;
+$brand-quinary: #4e4848;
+$brand-senary: #00718a;
+$brand-warning: red;
+$warm-lt-gray: #F7F7F7;
+$white : #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black : #000 !default;
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge( ( "100": $gray-100, "200": $gray-200, "300": $gray-300, "400": $gray-400, "500": $gray-500, "600": $gray-600, "700": $gray-700, "800": $gray-800, "900": $gray-900), $grays);
+
+$offset: -12vh;
+$ease: cubic-bezier(0, 0.58, 0.4, 0.99);
+$transition-ease: all 0.5s ease-in-out;
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+$screen-xl:                  $screen-lg !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+// Mobile Media Queries
+// Pixel Ratios based on Google Dev Inspector
+$mobile-s: 320px;
+$mobile-m: 375px;
+$mobile-l: 425px;
+
+//fonts
+
+$base-font-size: 16px;
+
+/*=== Gotham ===*/
+$brand-primary-font: "Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$brand-secondary-font: "Gotham A", "Gotham B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$PathwayFont: "Pathway Gothic One", Arial, sans-serif;
+
+/*=== Georgia ===*/
+$brand-serif: 'Georgia', serif;
+
+/*=== Libre Baskerville ===*/
+$brand-serif-alt: 'Libre Baskerville','Georgia', serif;
+
+/*=== Roboto ===*/
+$brand-text-font:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$utility-font: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*=== Font Awesome ===*/
+$font-awesome: 'FontAwesome';
+
+
