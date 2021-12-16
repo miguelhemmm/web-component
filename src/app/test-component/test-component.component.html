@@ -1,45 +1,23 @@
-<section id="bf-banner" class="container m-tb-20"><a aria-label="go to cyberweek" href="#">
-  <div class="big-background f-row f-j-space-evenly f-a-center"  style="align-content: space-evenly;">
-      <div style="width: 550px; padding: 1rem;">
-        <img src="/globalassets/global-assets/bf-cm/bf-logo-optimized.png" alt="bg-logo" style="width: 100%;" />
-      </div>
-      <div class=" f-col f-a-center" style="width: 550px;">
-          <img class=" visible-lg visible-md d-none d-lg-block d-sm-none" src="/globalassets/global-assets/bf-cm/shockling-good-desktop-optimized.png" alt="shocking-deals" style="width: 100%;" />
-          <img class=" hidden-lg hidden-md d-none d-sm-block d-md-block d-lg-none d-xl-none" src="/globalassets/global-assets/bf-cm/shockling-good-mobile-optimized.png" alt="good-deals" style="width: 90%;" />
-          <img src="/globalassets/global-assets/bf-cm/shockling-good-btn-optimized.png" (mouseout)="hover($event, 'out')" (mouseover)="hover($event, 'over')" alt="shop-button" style="width: 90%; cursor: pointer;" />
-      </div>
+<section>
+  <div class="waves-header">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 320">
+      <path fill="#029345" fill-opacity="1" d="M0,160L34.3,176C68.6,192,137,224,206,229.3C274.3,235,343,213,411,197.3C480,181,549,171,617,176C685.7,181,754,203,823,213.3C891.4,224,960,224,1029,213.3C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="270 0 920 320">
+      <path fill="#F6A726" fill-opacity="1" d="M0,32L60,37.3C120,43,240,53,360,96C480,139,600,213,720,213.3C840,213,960,139,1080,90.7C1200,43,1320,21,1380,10.7L1440,0L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 320">
+      <path fill="#75BD13" fill-opacity="1" d="M0,192L34.3,213.3C68.6,235,137,277,206,250.7C274.3,224,343,128,411,122.7C480,117,549,203,617,218.7C685.7,235,754,181,823,170.7C891.4,160,960,192,1029,213.3C1097.1,235,1166,245,1234,229.3C1302.9,213,1371,171,1406,149.3L1440,128L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+    </svg>
   </div>
-</a></section>
-
-
-<section id="bf-banner" class="container m-tb-20"><a aria-label="go to cyberweek" href="#">
-  <div class=" big-background f-row f-j-space-evenly f-a-center" style="align-content: space-evenly;">
-      <div style="width: 550px; padding: 1rem;">
-        <img src="/globalassets/global-assets/bf-cm/cw-logo-optimized.png" alt="bg-logo" style="width: 100%;" />
+  <h1>THE PLANTS</h1>
+  <div class="main-section">
+    <div class="main-section__fruits" *ngFor="let fruit of fruits">
+      <div class="main-section__fruits--item">
+        <img [src]="fruit.img" [alt]="fruit.img">
       </div>
-      <div class=" f-col f-a-center" style="width: 550px;">
-          <img class=" visible-lg visible-md d-none d-lg-block d-sm-none" src="/globalassets/global-assets/bf-cm/electric-deals-desktop-optimized.png" alt="shocking-deals" style="width: 100%;" />
-          <img class=" hidden-lg hidden-md d-none d-sm-block d-md-block d-lg-none d-xl-none" src="/globalassets/global-assets/bf-cm/electric-deals-mobile-optimized.png" alt="good-deals" style="width: 90%;" />
-          <img src="/globalassets/global-assets/bf-cm/electric-deals-btn-optimized.png" (mouseout)="hover($event, 'out')" (mouseover)="hover($event, 'over')" alt="shop-button" style="width: 90%;" />
-      </div>
+      <span>{{fruit.name}}</span>
+      <span class="fruit-tag">{{fruit.return}}</span>
+    </div>
   </div>
-</a></section>
-<!-- /globalassets/global-assets/bf-cm/extended-through-nov27-optimized.png -->
-
-<section class="container visible-lg d-none d-lg-block d-sm-none m-tb-20"><a href="#">
-  <div class=" big-background f-row f-j-space-evenly f-a-center">
-      <img src="/globalassets/global-assets/bf-cm/cw-logo-optimized.png" alt="cw-logo" style="width: 15%;" />
-      <img src="/globalassets/global-assets/bf-cm/electric-deals-desktop-optimized.png" alt="electric-deals" style="width: 30%;" />
-      <img src="/globalassets/global-assets/bf-cm/electric-deals-btn-optimized.png" alt="shop-button" style="width: 30%;" />
-  </div>
-</a></section>
-
-<section class="container visible-lg d-none d-lg-block d-sm-none m-tb-20"><a href="#">
-  <div class=" big-background f-row f-j-space-evenly f-a-center">
-      <img src="/globalassets/global-assets/bf-cm/bf-logo-optimized.png" alt="cw-logo" style="width: 15%;" />
-      <img src="/globalassets/global-assets/bf-cm/shockling-good-desktop-optimized.png" alt="electric-deals" style="width: 30%;" />
-      <img src="/globalassets/global-assets/bf-cm/shockling-good-btn-optimized.png" alt="shop-button" style="width: 30%;" />
-  </div>
-</a></section>
-
-<button class="btn btn-primary">button</button>
+</section>

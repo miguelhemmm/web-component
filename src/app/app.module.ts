@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,7 +14,8 @@ import { TestComponentComponent } from './test-component/test-component.componen
   ],
   imports: [
     BrowserModule,
-    SwiperModule
+    SwiperModule,
+    HttpClientModule
   ],
   entryComponents: [ ],
   providers: [],

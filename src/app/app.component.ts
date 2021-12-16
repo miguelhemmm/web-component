@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Dash2';
+
+  hover(event: any, type: string) {
+
+    event.target.attributes.style.value = type === 'over' ? 'width: 95%' : 'width: 90%'
+  }
 }
+

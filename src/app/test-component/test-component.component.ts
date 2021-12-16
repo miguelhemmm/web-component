@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UiService } from './ui.service';
 
 @Component({
   selector: 'app-test-component',
@@ -8,14 +9,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class TestComponentComponent implements OnInit {
 
-  constructor() { }
+  fruits: any[] = [];
+
+  constructor(private uiService: UiService) { }
 
   ngOnInit(): void {
+    this.uiService.getFruits().subscribe(fruits => {
+      this.fruits = fruits;
+      console.log(fruits)
+    })
   }
 
-  hover(event: any, type: string) {
 
-    event.target.attributes.style.value = type === 'over' ? 'width: 95%' : 'width: 90%'
-  }
 
 }

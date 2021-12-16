@@ -1,7 +1,70 @@
+$primary-color: #75BD13;
+$secondary-color: #029345;
+$complement-color: #F6A726;
 
-.big-background {
-  background: url("/globalassets/global-assets/bf-cm/bf-cm-desktop-bg-optimized.png")
-      no-repeat center/cover border-box;
+.waves-header {
+  height: 260px;
+  width: 100%;
+  position: relative;
+  svg {
+    z-index: 0;
+    position: absolute;
+
+    &:nth-child(2) {
+      opacity: .8;
+    }
+
+    &:nth-child(3) {
+      opacity: .8;
+    }
+  }
+
+}
+h1 {
+  text-align: center;
+  color: $secondary-color;
+  font-weight: bold;
 }
 
-// '/assets/bf-cm-desktop-bg-optimized.jpg';
+.main-section {
+  padding-top: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 100px;
+
+  &__fruits {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    &--item {
+      border: 2px solid $primary-color;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+        display:block;
+        margin:auto;
+      }
+    }
+
+    span {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .fruit-tag {
+      border: 1px solid $complement-color;
+      background: $complement-color;
+      border-radius: 25%;
+    }
+  }
+}
+

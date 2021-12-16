@@ -1,0 +1,66 @@
+[{
+  "name": "Banana",
+  "return": "10-15%",
+  "price": "12.5000",
+  "stock": "910",
+  "contract": "15 Years",
+  "location": "Jonggol, Jawa Barat",
+  "harvest": "Every year After 4th year",
+  "planted": {"treePlantation": 84, "people": 34},
+  "img": "https://images.unsplash.com/photo-1543218024-57a70143c369?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+},
+{
+  "name": "Avocado",
+  "return": "10-13%",
+  "price": "11.5000",
+  "stock": "520",
+  "contract": "10 Years",
+  "location": "Ecatepec, Estado de Mexico",
+  "harvest": "Every year After 2nd year",
+  "planted": {"treePlantation": 44, "people": 15},
+  "img": "https://images.unsplash.com/photo-1612506266679-606568a33215?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+},
+{
+  "name": "Durian",
+  "return": "10-15%",
+  "price": "9.5000",
+  "stock": "410",
+  "contract": "5 Years",
+  "location": "Cork, Ireland",
+  "harvest": "Every year after 1st year",
+  "planted": {"treePlantation": 27, "people": 12},
+  "img": "https://images.unsplash.com/photo-1623312087025-016a988d14c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+},
+{
+  "name": "Grapes",
+  "return": "10-13%",
+  "price": "15.5000",
+  "stock": "1210",
+  "contract": "15 Years",
+  "location": "Venice, Italy",
+  "harvest": "Every year After 3rd year",
+  "planted": {"treePlantation": 120, "people": 25},
+  "img": "https://images.unsplash.com/photo-1578829779691-99b60bd8c7be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1067&q=80"
+},
+{
+  "name": "Zaitun",
+  "return": "10-13%",
+  "price": "7.5000",
+  "stock": "280",
+  "contract": "10 Years",
+  "location": "La Plata, Argentina",
+  "harvest": "Every year After 1st year",
+  "planted": {"treePlantation": 24, "people": 10},
+  "img": "https://kabarnet.files.wordpress.com/2009/07/zaitun.jpg"
+},
+{
+  "name": "Coconut",
+  "return": "10-15%",
+  "price": "16.5000",
+  "stock": "850",
+  "contract": "10 Years",
+  "location": "Veracruz, México",
+  "harvest": "Every year After 1st year",
+  "planted": {"treePlantation": 104, "people": 74},
+  "img": "https://images.unsplash.com/photo-1580984969071-a8da5656c2fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+}]
